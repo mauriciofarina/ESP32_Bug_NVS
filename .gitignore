@@ -1,0 +1,10 @@
+build/
+.vscode/
+doc/html/
+sdkconfig.old
+components/readme.txt
+setupIDF.sh
+componentsToRefactor/
+sdkconfig
+default_config.bin
+fast.sh
