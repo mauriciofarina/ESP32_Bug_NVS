@@ -191,22 +191,28 @@ void app_main(void) {
     vTaskDelay(STEP_DELAY);
     ESP_LOGI(TAG, "\n\n\n\n\n\n\n\n\n");
 
+    //STEP 1
     initNvsPartitions(); //Init Partitions
 
+    //STEP 2
     printNvsPartitionsStatus(); //Print NVS Status
 
+    //STEP 3
     checkNvsKeys(); //Check If Keys exist on NVS and init the ones that are not
 
+    //STEP 4
     printNvsPartitionsStatus(); //Print NVS Status
 
+    //STEP 5
     getNvsKeys(); //Load NVS Keys
 
+    //STEP 6
     printNvsPartitionsStatus(); //Print NVS Status
 
     /*
      *  Close Monitor and Restart the ESP32 with "make monitor" 
      * 
-     *  In some situations, using the esp_reset() function the bug didn't happen  
+     *  In some tests, using the esp_reset() function didn't cause the bug to happen 
      * 
      *  Also, after the second reboot the bug doesn't happen anymore
      * 
@@ -219,12 +225,16 @@ void app_main(void) {
         vTaskDelay(5000);
     }
 
+    //STEP 7
     setNvsKeys();
 
+    //STEP 8
     printNvsPartitionsStatus(); //Print NVS Status
 
+    //STEP 9
     getNvsKeys();
 
+    //STEP 10
     printNvsPartitionsStatus(); //Print NVS Status
 
     vTaskDelay(5000);
