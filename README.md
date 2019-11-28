@@ -1,5 +1,9 @@
 # ESP32 NVS Bug
 
+## Solution
+
+The friends from Espressif discovered that the problem was caused by the use of the NVS iterator. For more details and the patch for this bug refer to this [link](https://github.com/espressif/esp-idf/issues/4378)
+
 
 ## Problem Description
 
